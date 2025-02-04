@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor @AllArgsConstructor
 @EqualsAndHashCode @ToString
 public class Weapon {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     @Getter @Setter
     @Column(name ="currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')", nullable = false, unique = true)
     private Long serialNumber;

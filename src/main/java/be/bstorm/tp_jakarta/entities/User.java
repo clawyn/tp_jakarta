@@ -9,7 +9,7 @@ import lombok.*;
 @EqualsAndHashCode @ToString
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     @Getter @Setter
     private Long id;
 
