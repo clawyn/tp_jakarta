@@ -13,28 +13,28 @@ public class User {
     @Getter @Setter
     private Long id;
 
-    @Column(nullable = false, unique = false, length = 50)
+    @Column(name = "FirstName",nullable = false, unique = false, length = 50)
     @Getter @Setter
     private String FirstName;
 
-    @Column(nullable = false, unique = false, length = 50)
+    @Column(name="lastName",nullable = false, unique = false, length = 50)
     @Getter @Setter
     private String LastName;
 
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(name = "pseudonym",nullable = false, unique = true, length = 50)
     @Getter @Setter
     private String pseudonym;
 
-    @Column(nullable = false)
+    @Column(name="password",nullable = false)
     @Getter @Setter
     private String password;
 
-    @Column (nullable = false)
+    @Column (name="accepted",nullable = false)
     @Getter @Setter
     private boolean accepted;
 
-    @Column(nullable = false)
+    @Column(name="role",nullable = false)
     @Getter @Setter
     private String role;
 

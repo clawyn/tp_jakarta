@@ -10,18 +10,22 @@ import lombok.*;
 public class Weapon {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter @Setter
-    @Column(nullable = false, unique = true)
+    @Column(name ="currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')", nullable = false, unique = true)
     private Long serialNumber;
 
-    @Column(nullable = true, unique = false)
+    @Column(name = "name", nullable = false,unique = false)
+    @Getter @Setter
+    private String name;
+
+    @Column(name ="type",nullable = true, unique = false)
     @Getter @Setter
     private String type;
 
-    @Column(nullable = false, unique = false)
+    @Column(name ="model",nullable = true, unique = false)
     @Getter @Setter
     private String model;
 
-    @Column(nullable = true, unique = false)
+    @Column(name ="history",nullable = true, unique = false)
     @Getter @Setter
     private String history;
 

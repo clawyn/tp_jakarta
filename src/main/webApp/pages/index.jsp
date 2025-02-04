@@ -3,17 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%@include file="/src/main/webApp/import/import.jsp"%>
+    <%@include file="/import/import.jsp"%>
+    <!--/src/main/webApp/import/import.jsp-->
     <title>Poney</title>
 </head>
-<%@include file="/src/main/webApp/layout/header.jsp"%>
+<%@include file="/layout/header.jsp"%>
+<!--/src/main/webApp/layout/header.jsp-->
 <main>
     <c:if test="${currentUser == null}">
-        <a href="/src/main/webApp/pages/addUser.jsp"> Add user </a>
-        <a href="/src/main/webApp/pages/log.jsp" >log</a>
+        <a href="/pages/addUser.jsp"> Add user </a>
+        <!--/src/main/webApp/pages/addUser.jsp-->
+        <a href="/pages/otherIndex.jsp" >log</a>
+        <!--/src/main/webApp/pages/log.jsp-->
     </c:if>
-    <c:if test="${currentUser != null && currentUser.accepted.equals(true)}">
-        <a href="/src/main/webApp/pages/otherIndex.jsp"> Over </a>
+    <c:if test="${currentUser != null && (currentUser.accepted.equals(true) || currentUser.getRole().equals('ADMIN'))}">
+        <a href="/pages/otherIndex.jsp"> Over </a>
+        <!--/src/main/webApp/pages/otherIndex.jsp-->
     </c:if>
     <c:if test="${currentUser != null}">
         <form action="${pageContext.request.contextPath}/Logout" method="post">
@@ -30,5 +35,6 @@
         </thead>
     </table>
 </main>
-<%@include file="/src/main/webApp/layout/footer.jsp"%>
+<%@include file="/layout/footer.jsp"%>
+<!--/src/main/webApp/layout/footer.jsp-->
 </html>

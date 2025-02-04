@@ -39,4 +39,14 @@ public class UserServiceImpl implements UserService, Serializable {
         }
         return user;
     }
+
+
+    @Override
+    public User save(User user) {
+        if(userRepository.existsByPseudonym(user.getPseudonym())){
+            throw new RuntimeException("User already exists");
+        }
+        return userRepository.save(user);
+    }
+
 }

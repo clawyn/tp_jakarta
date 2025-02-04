@@ -10,17 +10,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%@include file="/src/main/webApp/import/import.jsp"%>
+  <%@include file="/import/import.jsp"%>
+  <!--/src/main/webApp/import/import.jsp-->
   <title>Armes</title>
 </head>
-<%@include file="/src/main/webApp/layout/header_2.jsp"%>
+<%@include file="/layout/header_2.jsp"%>
+<!--/src/main/webApp/layout/header_2.jsp-->
 <main>
   <c:if test="${currentUser == null}">
     <a href="/src/main/webApp/pages/addUser.jsp"> Add user </a>
     <a href="/src/main/webApp/pages/log.jsp" >log</a>
   </c:if>
-  <c:if test="${currentUser != null && currentUser.accepted.equals(true)}">
-    <a href="/accepted/weapon/create"> Créer </a>
+  <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">
+    <a href="/admin/weapon/create"> Créer </a>
   </c:if>
   <c:if test="${currentUser != null}">
     <form action="${pageContext.request.contextPath}/Logout" method="post">
@@ -40,8 +42,23 @@
     <tbody>
     <c:forEach var="waepon" items="${weapons}">
       <tr>
-        <td>${weapon.type}</td>
-        <td>${weapon.model}</td>
+        <td>${weapon.name}</td>
+        <td>
+            <c:if test="${weapon.type != null}">
+              ${waepon.type}
+            </c:if>
+            <c:if test="${weapon.type == null}">
+              Type inconnu.
+            </c:if>
+        </td>
+        <td>
+            <c:if test="${weapon.model}">
+              ${weapon.model}
+            </c:if>
+            <c:if test="${weapon.model}">
+              Model inconnu.
+            </c:if>
+        </td>
         <td>
           <c:if test="${weapon.history != null}">
             ${weapon.history}
@@ -52,11 +69,11 @@
         </td>
         <td>
           <button>
-            <a href="/weaponhistory?id=${weapon.id}">Passif de l'arme</a>
+            <a href="/weaponhistory?id=${weapon.serialNumber}">Passif de l'arme</a>
           </button>
           <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">
             <button>
-              <a href="/admn/weapon/update?id=${weapon.id}">Update</a>
+              <a href="/admn/weapon/update?id=${weapon.serialNumber}">Update</a>
             </button>
 
           </c:if>
@@ -66,5 +83,6 @@
     </tbody>
   </table>
 </main>
-<%@include file="/src/main/webApp/layout/footer_2.jsp"%>
+<%@include file="/layout/footer_2.jsp"%>
+<!--src/main/webApp/layout/footer_2.jsp-->
 </html>

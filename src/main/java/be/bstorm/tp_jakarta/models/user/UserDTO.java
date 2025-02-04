@@ -1,4 +1,4 @@
-package be.bstorm.tp_jakarta.models;
+package be.bstorm.tp_jakarta.models.user;
 
 import be.bstorm.tp_jakarta.entities.User;
 import lombok.AllArgsConstructor;

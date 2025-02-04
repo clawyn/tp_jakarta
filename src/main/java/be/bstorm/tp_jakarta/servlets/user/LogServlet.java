@@ -1,4 +1,4 @@
-package be.bstorm.tp_jakarta.servlets;
+package be.bstorm.tp_jakarta.servlets.user;
 
 import be.bstorm.tp_jakarta.entities.User;
 import be.bstorm.tp_jakarta.services.UserService;

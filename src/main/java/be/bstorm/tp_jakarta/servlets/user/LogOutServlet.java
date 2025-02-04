@@ -1,4 +1,4 @@
-package be.bstorm.tp_jakarta.servlets;
+package be.bstorm.tp_jakarta.servlets.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

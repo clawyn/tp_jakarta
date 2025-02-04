@@ -20,11 +20,12 @@ public class UserRepositoryImpl implements UserRepository, Serializable {
     }
 
     @Override
-    public void save(User user) {
+    public User save(User user) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(user);
         em.getTransaction().commit();
+        return user;
     }
 
     @Override
