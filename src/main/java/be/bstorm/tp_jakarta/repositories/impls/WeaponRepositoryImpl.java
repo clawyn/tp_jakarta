@@ -1,6 +1,6 @@
 package be.bstorm.tp_jakarta.repositories.impls;
 
-import be.bstorm.tp_jakarta.EmfFactoryUtils;
+import be.bstorm.tp_jakarta.servlets.utils.EmfFactoryUtils;
 import be.bstorm.tp_jakarta.entities.Weapon;
 import be.bstorm.tp_jakarta.repositories.WeaponRepository;
 import jakarta.enterprise.context.SessionScoped;

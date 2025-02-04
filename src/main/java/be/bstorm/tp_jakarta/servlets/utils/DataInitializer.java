@@ -1,9 +1,7 @@
-package be.bstorm.tp_jakarta;
+package be.bstorm.tp_jakarta.servlets.utils;
 
 import be.bstorm.tp_jakarta.entities.User;
 import be.bstorm.tp_jakarta.entities.Weapon;
-import be.bstorm.tp_jakarta.repositories.UserRepository;
-import be.bstorm.tp_jakarta.repositories.WeaponRepository;
 import be.bstorm.tp_jakarta.repositories.impls.UserRepositoryImpl;
 import be.bstorm.tp_jakarta.repositories.impls.WeaponRepositoryImpl;
 import be.bstorm.tp_jakarta.services.UserService;
@@ -13,11 +11,8 @@ import be.bstorm.tp_jakarta.services.impls.WeaponServiceImpl;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
-import jakarta.servlet.annotation.WebServlet;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @WebListener
 public class DataInitializer implements ServletContextListener {

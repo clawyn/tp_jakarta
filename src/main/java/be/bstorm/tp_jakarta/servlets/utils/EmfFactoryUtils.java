@@ -1,4 +1,4 @@
-package be.bstorm.tp_jakarta;
+package be.bstorm.tp_jakarta.servlets.utils;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
