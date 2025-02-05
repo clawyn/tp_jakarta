@@ -16,6 +16,7 @@ import java.util.List;
 
 @WebListener
 public class DataInitializer implements ServletContextListener {
+
     private final UserService userService;
     private final WeaponService weaponService;
 
@@ -34,7 +35,7 @@ public class DataInitializer implements ServletContextListener {
         userService.addUser(admin);
         userService.addUser(rejected);
 
-        List<User> users = List.of(
+        /*List<User> users = List.of(
                 new User(1L,"John","Doe","Le Fantôme.","Ghost123",true,"accepted"),
                 new User(2L,"Jane","Smith","La Voleuse.","Thief456",true,"accepted"),
                 new User(3L,"Max","Payne","Le Punisseur.","Punish789",true,"accepted"),
@@ -70,7 +71,7 @@ public class DataInitializer implements ServletContextListener {
         weaponService.save(weapon_6);
         weaponService.save(weapon_7);
         weaponService.save(weapon_8);
-        weaponService.save(weapon_9);
+        weaponService.save(weapon_9);*/
 
     }
 }

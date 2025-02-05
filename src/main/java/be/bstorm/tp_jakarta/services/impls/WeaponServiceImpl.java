@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import java.io.Serializable;
 import java.util.List;
 
-@WebServlet("/log")
+//@WebServlet("/log")
 public class WeaponServiceImpl implements WeaponService, Serializable {
 
     @Inject

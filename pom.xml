@@ -78,14 +78,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Jakarta CDI API -->
-        <dependency>
-            <groupId>jakarta.enterprise</groupId>
-            <artifactId>jakarta.enterprise.cdi-api</artifactId>
-            <version>4.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!-- Weld Servlet (Weld CDI pour Tomcat) -->
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
