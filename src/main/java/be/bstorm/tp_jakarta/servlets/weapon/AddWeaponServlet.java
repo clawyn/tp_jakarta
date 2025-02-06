@@ -31,11 +31,13 @@ public class AddWeaponServlet extends HttpServlet {
         String model = req.getParameter("model");
         String history = req.getParameter("history");
 
-        Weapon weapon = new Weapon(serialNumber, name, type, model, history);
-        weaponService.save(weapon);
-
-        resp.sendRedirect(req.getContextPath() + "/");
-
+        try{
+            weaponService.addWeapon(new Weapon(serialNumber, name, type, model, history));
+            resp.sendRedirect(req.getContextPath() + "/addWeapon");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            req.getRequestDispatcher("/pages/addWeapon.jsp").forward(req, resp);
+        }
     }
 
 }

@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<%@include file="/layout/header_2.jsp"%>
+<%--<%@include file="/layout/header_2.jsp"%>--%>
 <main>
    <h2> Formulaire nouveau user </h2>
     <div>
@@ -45,6 +45,6 @@
         <input type="text" id="role" name="role" required><br>
     </div>
 </main>
-<%@include file="/layout/footer_2.jsp"%>
+<%--<%@include file="/layout/footer_2.jsp"%>--%>
 </body>
 </html>

@@ -70,4 +70,13 @@ public class WeaponServiceImpl implements WeaponService, Serializable {
     public void deleteWeapon(Weapon weapon){
         weaponRepository.deleteAll(weapon);
     }
+
+    @Override
+    public void addWeapon(Weapon weapon) {
+        if(weaponRepository.existsBySerialNumber(weapon.getSerialNumber())){
+            throw new IllegalArgumentException("already exists");
+        }
+        weaponRepository.save(weapon);
+
+    }
 }

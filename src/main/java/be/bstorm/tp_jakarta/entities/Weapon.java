@@ -10,7 +10,7 @@ import lombok.*;
 public class Weapon {
     @Id
     @Getter @Setter
-    @Column(name ="currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')", nullable = false, unique = true)
+    @Column(name ="serialNumber", nullable = false, unique = true)
     private Long serialNumber;
 
     @Column(name = "name", nullable = false,unique = false)

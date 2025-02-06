@@ -14,4 +14,6 @@ public interface WeaponService {
 
     void deleteBySerialNumber(Long serialNumber);
     void deleteWeapon(Weapon weapon);
+    void addWeapon (Weapon weapon);
+
 }

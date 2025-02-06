@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<%@include file="/layout/header_2.jsp"%>
+<%--<%@include file="/layout/header_2.jsp"%>--%>
 <main>
   <h2> Formulaire nouvelle arme </h2>
   <div>
@@ -35,6 +35,6 @@
     <input type="text" id="history" name="history" ><br>
   </div>
 </main>
-<%@include file="/layout/footer_2.jsp"%>
+<%--<%@include file="/layout/footer_2.jsp"%>--%>
 </body>
 </html>

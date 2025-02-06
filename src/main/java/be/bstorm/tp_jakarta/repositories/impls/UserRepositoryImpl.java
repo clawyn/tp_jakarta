@@ -28,7 +28,7 @@ public class UserRepositoryImpl implements UserRepository, Serializable {
             em.getTransaction().commit();
 //            return user;
         }catch (Exception e){
-            System.out.println("coucou" + e.getMessage());
+            System.out.println( e.getMessage());
 
         }
         return null;
@@ -37,7 +37,7 @@ public class UserRepositoryImpl implements UserRepository, Serializable {
     @Override
     public boolean existsByPseudonym(String pseudonym) {
         try (EntityManager em = emf.createEntityManager()){
-            Query query = em.createQuery("SELECT count(u) >0 FROM User u WHERE u.pseudonym = :pseudonym");
+            Query query = em.createQuery("SELECT count(u) > 0 FROM User u WHERE u.pseudonym = :pseudonym");
             query.setParameter("pseudonym", pseudonym);
             return (boolean) query.getSingleResult();
         }

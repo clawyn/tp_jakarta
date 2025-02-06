@@ -36,7 +36,7 @@ public class WeaponUpdateServlet extends HttpServlet {
         Weapon weapon = new Weapon(serialNumber, name, type, model, history);
         weaponService.update(weapon, newSerialNumber);
 
-        resp.sendRedirect(req.getContextPath() + "/");
+        resp.sendRedirect(req.getContextPath() + "/pages/weaponUpdate");
 
 
     }

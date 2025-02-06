@@ -14,16 +14,17 @@
   <!--/src/main/webApp/import/import.jsp-->
   <title>Armes</title>
 </head>
-<%@include file="/layout/header_2.jsp"%>
+<%--<%@include file="/layout/header_2.jsp"%>--%>
 <!--/src/main/webApp/layout/header_2.jsp-->
 <main>
   <c:if test="${currentUser == null}">
-    <a href="/src/main/webApp/pages/addUser.jsp"> Add user </a>
-    <a href="/src/main/webApp/pages/log.jsp" >log</a>
+    <a href="/pages/addUser.jsp"> Add user </a>
+    <a href="/pages/log.jsp" >log</a>
+    <a href="/pages/addWeapon.jsp"> Add Weapon</a>
   </c:if>
-  <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">
-    <a href="/admin/weapon/create"> Créer </a>
-  </c:if>
+<%--  <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">--%>
+<%--    <a href="/admin/weapon/create"> Créer </a>--%>
+<%--  </c:if>--%>
   <c:if test="${currentUser != null}">
     <form action="${pageContext.request.contextPath}/Logout" method="post">
       <button type="submit"> Logout</button>
@@ -83,6 +84,6 @@
     </tbody>
   </table>
 </main>
-<%@include file="/layout/footer_2.jsp"%>
+<%--<%@include file="/layout/footer_2.jsp"%>--%>
 <!--src/main/webApp/layout/footer_2.jsp-->
 </html>

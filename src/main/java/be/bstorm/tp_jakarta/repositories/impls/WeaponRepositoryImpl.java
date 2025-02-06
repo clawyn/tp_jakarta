@@ -14,35 +14,9 @@ import java.util.Optional;
 
 @SessionScoped
 public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
-    private EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
-    public void WeaponRepositoryImpl(){
-        emf = EmfFactoryUtils.getEmf();
-    }
-
-    @Override
-    public List<Weapon> findAll() {
-//       try (EntityManager em = emf.createEntityManager()) {
-//           return em.createQuery("select w from Weapon w", Weapon.class).getResultList();
-//       }
-        return List.of();
-    }
-
-    @Override
-    public Optional<Weapon> findBySerialNumber(Long serialNumber) {
-//        try(EntityManager em = emf.createEntityManager()) {
-//            return Optional.of(em.find(Weapon.class, serialNumber));
-//        }
-        return Optional.empty();
-    }
-
-    @Override
-    public Optional<Weapon> findByName ( String name) {
-//        try(EntityManager em = emf.createEntityManager()) {
-//            return Optional.of(em.find(Weapon.class, name));
-//        }
-        return Optional.empty();
-    }
+    public WeaponRepositoryImpl() {this.emf = EmfFactoryUtils.getEmf();}
 
     @Override
     public Weapon save(Weapon weapon) {
@@ -50,8 +24,11 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
             em.getTransaction().begin();
             em.persist(weapon);
             em.getTransaction().commit();
-            return weapon;
+//            return weapon;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
+        return null;
     }
 
     @Override
@@ -67,34 +44,63 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
     }
 
     @Override
+    public List<Weapon> findAll() {
+       try (EntityManager em = emf.createEntityManager()) {
+           return em.createQuery("select w from Weapon w", Weapon.class).getResultList();
+       }
+    }
+
+    @Override
+    public Optional<Weapon> findBySerialNumber(Long serialNumber) {
+        try(EntityManager em = emf.createEntityManager()) {
+            Query query = em.createQuery("SELECT w From Weapon w WHERE w.serialNumber = :serialNumber");
+            query.setParameter("serialNumber", serialNumber);
+            return Optional.of((Weapon) query.getSingleResult());
+        }
+    }
+
+    @Override
+    public Optional<Weapon> findByName ( String name) {
+        try(EntityManager em = emf.createEntityManager()) {
+            Query query = em.createQuery("SELECT w from Weapon w where w.name = :name");
+            query.setParameter("name", name);
+            return Optional.of((Weapon) query.getSingleResult());
+        }
+    }
+
+
+
+
+
+    @Override
     public void updateByName(Weapon weapon, String name) {
-//        try (EntityManager em = emf.createEntityManager()) {
-//            em.getTransaction().begin();
-//            Weapon otherWeapon = em.find(Weapon.class, name);
-//            otherWeapon.setSerialNumber(weapon.getSerialNumber());
-//            otherWeapon.setName(weapon.getName());
-//            otherWeapon.setType(weapon.getType());
-//            otherWeapon.setModel(weapon.getModel());
-//            otherWeapon.setHistory(weapon.getHistory());
-//
-//            em.getTransaction().commit();
-//        }
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            Weapon otherWeapon = em.find(Weapon.class, name);
+            otherWeapon.setSerialNumber(weapon.getSerialNumber());
+            otherWeapon.setName(weapon.getName());
+            otherWeapon.setType(weapon.getType());
+            otherWeapon.setModel(weapon.getModel());
+            otherWeapon.setHistory(weapon.getHistory());
+
+            em.getTransaction().commit();
+        }
 
     }
 
     @Override
     public void update(Weapon weapon, Long serialNumber) {
-//        try (EntityManager em = emf.createEntityManager()) {
-//            em.getTransaction().begin();
-//            Weapon otherWeapon = em.find(Weapon.class,serialNumber);
-//            otherWeapon.setSerialNumber(weapon.getSerialNumber());
-//            otherWeapon.setName(weapon.getName());
-//            otherWeapon.setType(weapon.getType());
-//            otherWeapon.setModel(weapon.getModel());
-//            otherWeapon.setHistory(weapon.getHistory());
-//
-//            em.getTransaction().commit();
-//        }
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            Weapon otherWeapon = em.find(Weapon.class,serialNumber);
+            otherWeapon.setSerialNumber(weapon.getSerialNumber());
+            otherWeapon.setName(weapon.getName());
+            otherWeapon.setType(weapon.getType());
+            otherWeapon.setModel(weapon.getModel());
+            otherWeapon.setHistory(weapon.getHistory());
+
+            em.getTransaction().commit();
+        }
 
     }
 

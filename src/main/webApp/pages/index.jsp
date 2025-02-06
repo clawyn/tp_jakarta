@@ -13,10 +13,12 @@
     <c:if test="${currentUser == null}">
         <a href="/pages/addUser.jsp"> Add user </a>
         <!--/src/main/webApp/pages/addUser.jsp-->
-        <a href="/pages/otherIndex.jsp" >log</a>
+        <a href="/pages/log.jsp" >log</a>
         <!--/src/main/webApp/pages/log.jsp-->
+
     </c:if>
-    <c:if test="${currentUser != null && (currentUser.accepted.equals(true) || currentUser.getRole().equals('ADMIN'))}">
+    <c:if test="${currentUser == null}">
+<%--        currentUser != null && (currentUser.accepted.equals(true) || currentUser.getRole().equals('ADMIN'))--%>
         <a href="/pages/otherIndex.jsp"> Over </a>
         <!--/src/main/webApp/pages/otherIndex.jsp-->
     </c:if>
