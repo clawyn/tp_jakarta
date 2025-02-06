@@ -23,20 +23,74 @@
         <!--/src/main/webApp/pages/otherIndex.jsp-->
     </c:if>
     <c:if test="${currentUser != null}">
+
         <form action="${pageContext.request.contextPath}/logout" method="post">
             <button type="submit">Logout</button>
         </form>
     </c:if>
-    <table>
-        <thead>
-        <tr>
-            <th> Aimer son poney</th>
-            <th> Caresser son poney</th>
-            <th> pommener son poney </th>
-        </tr>
-        </thead>
-    </table>
+    <c:if test="${currentUser == null}">
+        <table>
+            <thead>
+            <tr>
+                <th> Aimer son poney</th>
+                <th> Caresser son poney</th>
+                <th> pommener son poney </th>
+            </tr>
+            </thead>
+        </table>
+    </c:if>
+    <c:if test="${currentUser != null && currentUser.accepted == true}">
+        <a href="/pages/addWeapon.jsp"> Add weapon</a>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Numéro de série </th>
+                <th>Type</th>
+                <th>Model</th>
+                <th>History</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="weapon" items="${weapons}">
+                <tr>
+                    <td>${weapon.name}</td>
+                    <td>
+                        <c:if test="${weapon.type != null}">
+                            ${weapon.type}
+                        </c:if>
+                        <c:if test="${weapon.type == null}">
+                            Pas de type
+                        </c:if>
+                    </td>
+                    <td>
+                        <c:if test="${weapon.model != null}">
+                            ${weapon.model}
+                        </c:if>
+                        <c:if test="${weapon.model == null}">
+                            Pas de model
+                        </c:if>
+                    </td>
+                    <td>
+                        <c:if test="${weapon.history != null}">
+                            ${weapon.history}
+                        </c:if>
+                        <c:if test="${weapon.history == null}">
+                            Pas de histoir
+                        </c:if>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </c:if>
 </main>
-<%@include file="/layout/footer.jsp"%>
+<c:if test="${currentUser == null || currentUser.accepted == false}">
+    <%@include file="/layout/footer.jsp"%>
+</c:if>
+<c:if test="${currentUser != null && currentUser.accepted == true}">
+    <%@include file="/layout/footer_2.jsp"%>
+</c:if>
+
 <!--/src/main/webApp/layout/footer.jsp-->
 </html>

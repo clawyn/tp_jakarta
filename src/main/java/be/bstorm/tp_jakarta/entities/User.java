@@ -62,5 +62,12 @@ public class User {
     }
 
 
-
+    public User(String pseudonym, String password, String firstName, String lastName, boolean accepted, String role) {
+        this.pseudonym = pseudonym;
+        this.password = password;
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.accepted = accepted;
+        this.role = role;
+    }
 }

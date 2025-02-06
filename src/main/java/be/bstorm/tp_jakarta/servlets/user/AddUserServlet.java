@@ -25,9 +25,14 @@ public class AddUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         String pseudonym = req.getParameter("pseudonym");
         String password = req.getParameter("password");
+        String FirstName = req.getParameter("FirstName");
+        String LastName = req.getParameter("LastName");
+        boolean accepted = Boolean.parseBoolean(req.getParameter(String.valueOf(true)));
+        String role = req.getParameter("role");
+        Long id = Long.parseLong(req.getParameter("id"));
 
         try {
-            userService.addUser(new User(pseudonym, password));
+            userService.addUser(new User(id,pseudonym, password,FirstName,LastName,accepted,role));
             resp.sendRedirect(req.getContextPath() + "/log");
         }
         catch (Exception e) {

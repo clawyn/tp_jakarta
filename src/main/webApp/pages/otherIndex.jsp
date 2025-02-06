@@ -28,6 +28,7 @@
   <c:if test="${currentUser != null}">
     <form action="${pageContext.request.contextPath}/logout" method="post">
       <button type="submit"> Logout</button>
+
     </form>
   </c:if>
   <table>

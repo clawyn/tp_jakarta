@@ -17,8 +17,13 @@
 <body>
 <%--<%@include file="/layout/header_2.jsp"%>--%>
 <main>
-  <form action="${pageContext.request.cntexPath}/weaponadd" method="post">
-    <h2> Formulaire nouvelle arme </h2>
+  <h2>Formulaire nouvelle arme </h2>
+  <form action="${pageContext.request.contextPath}/weaponAdd" method="post">
+
+    <div>
+      <label for="serialNumber">serialNumber :</label>
+      <input type="number" id="serialNumber" name="serialNumber" required><br>
+    </div>
     <div>
       <label for="name">nom :</label>
       <input type="text" id="name" name="name" required><br>
@@ -35,7 +40,7 @@
       <label for="history">Histoir :</label>
       <input type="text" id="history" name="history" ><br>
     </div>
-    <button type="submit"></button>
+    <button type="submit">add </button>
   </form>
 
 </main>
