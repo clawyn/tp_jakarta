@@ -33,14 +33,12 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
 
     @Override
     public boolean existsBySerialNumber(Long serialNumber) {
-//        try(EntityManager em = emf.createEntityManager()) {
-//            Query query = em.createQuery("select count(w) > 0 from Weapon w where w.serialNumber = :serialNumber");
-//            query.setParameter("serialNumber", serialNumber);
-//            Long count = (Long) query.getSingleResult();
-//            boolean exists = count > 0;
-//            return exists;
-//        }
-        return false;
+        try(EntityManager em = emf.createEntityManager()) {
+            Query query = em.createQuery("select count(w) > 0 from Weapon w where w.serialNumber = :serialNumber");
+            query.setParameter("serialNumber", serialNumber);
+            return (Boolean) query.getSingleResult();
+        }
+//        return false;
     }
 
     @Override
@@ -92,6 +90,7 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
     public void update(Weapon weapon, Long serialNumber) {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
+
             Weapon otherWeapon = em.find(Weapon.class,serialNumber);
             otherWeapon.setSerialNumber(weapon.getSerialNumber());
             otherWeapon.setName(weapon.getName());
@@ -107,12 +106,24 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
 
     @Override
     public void delete(Long serialNumber) {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            serialNumber = em.merge(serialNumber);
+            em.remove(serialNumber);
+            em.getTransaction().commit();
+        }
 
 
     }
 
     @Override
     public void deleteAll(Weapon weapon) {
+        try(EntityManager em = emf.createEntityManager()){
+            em.getTransaction().begin();
+            weapon = em.merge(weapon);
+            em.remove(weapon);
+            em.getTransaction().commit();
+        }
 
     }
 }

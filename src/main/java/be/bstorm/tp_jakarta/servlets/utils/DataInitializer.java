@@ -53,7 +53,7 @@ public class DataInitializer implements ServletContextListener {
 
         List<Weapon> weapons = List.of(
             new Weapon(1L, "Épée de Aragorn", "Épée", "Épée elefique", "A récupéré le trône du Gondor avec."),
-            new Weapon(2L, "Sabre laser de Luke Skywalker", null, "Sabre laser", "A combattu l'Empire et rétabli l'équilibre dans la Force."),
+            new Weapon(2L, "Sabre laser de Luke Skywalker", "Sabre", "Sabre laser", "A combattu l'Empire et rétabli l'équilibre dans la Force."),
             new Weapon(3L, "Marteau de Thor", "Marteau", "Mjolnir", "A aidé à sauver l'univers des forces du mal."),
             new Weapon(4L, "Bouclier de Captain America", "Bouclier", null, "A protégé le monde contre les menaces extraterrestres et les super-vilains."),
             new Weapon(5L, "Baguette de Harry Potter", "Baguette magique", "Bois de houx et plume de phénix", "A vaincu Voldemort et sauvé le monde des sorciers."),
