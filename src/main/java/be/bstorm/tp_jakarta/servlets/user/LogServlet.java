@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/login")
+@WebServlet("/log")
 public class LogServlet extends HttpServlet {
     @Inject
     private UserService userService;

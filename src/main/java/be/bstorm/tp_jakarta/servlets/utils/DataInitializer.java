@@ -11,6 +11,7 @@ import be.bstorm.tp_jakarta.services.impls.WeaponServiceImpl;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.List;
 
@@ -28,24 +29,25 @@ public class DataInitializer implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        User admin = new User("admin", "admin", true, "admin");
-        User accepted = new User("accepted", "accepted", true, "accepted");
-        User rejected = new User("rejected", "rejected", false, "rejected");
+        String password = BCrypt.hashpw("all",BCrypt.gensalt());
+        User admin = new User("admin", password, true, "admin");
+        User accepted = new User("accepted", password, true, "accepted");
+        User rejected = new User("rejected", password, false, "rejected");
         userService.addUser(accepted);
         userService.addUser(admin);
         userService.addUser(rejected);
 
         List<User> users = List.of(
-                new User(1L, "John", "Doe", "Le Fantôme.", "Ghost123", true, "accepted"),
-                new User(2L, "Jane", "Smith", "La Voleuse.", "Thief456", true, "accepted"),
-                new User(3L, "Max", "Payne", "Le Punisseur.", "Punish789", true, "accepted"),
-                new User(4L, "Alice", "Johnson", "La Sorcière.", "Witch101", true, "accepted"),
-                new User(5L, "Bob", "Brown", "Le Hacker.", "Hack202", true, "accepted"),
-                new User(6L, "Clara", "White", "La Reine des Glaces.", "IceQueen303", true, "accepted"),
-                new User(7L, "Jack", "Black", "Le Maître des Ombres", "Shadow404", true, "accepted"),
-                new User(8L, "Luke", "Skywalker", "Le Jedi Noir .", "DarkJedi606", true, "accepted"),
-                new User(9L, "Diana", "Prince", "La Guerrière .", "Warrior707", true, "accepted"),
-                new User(10L, "Emma", "Green", "La Cambrioleuse.", "Burglar505", true, "accepted")
+                new User(1L, "John", "Doe", "Le Fantôme.", password, true, "accepted"),
+                new User(2L, "Jane", "Smith", "La Voleuse.", password, true, "accepted"),
+                new User(3L, "Max", "Payne", "Le Punisseur.", password, true, "accepted"),
+                new User(4L, "Alice", "Johnson", "La Sorcière.", password, true, "accepted"),
+                new User(5L, "Bob", "Brown", "Le Hacker.", password, true, "accepted"),
+                new User(6L, "Clara", "White", "La Reine des Glaces.", password, true, "accepted"),
+                new User(7L, "Jack", "Black", "Le Maître des Ombres", password, true, "accepted"),
+                new User(8L, "Luke", "Skywalker", "Le Jedi Noir .", password, true, "accepted"),
+                new User(9L, "Diana", "Prince", "La Guerrière .", password, true, "accepted"),
+                new User(10L, "Emma", "Green", "La Cambrioleuse.", password, true, "accepted")
 
         );
 

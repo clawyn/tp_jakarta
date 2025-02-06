@@ -44,6 +44,7 @@
         <label for="role">role :</label>
         <input type="text" id="role" name="role" required><br>
     </div>
+    <button type="submit"> Log</button>
 </main>
 <%--<%@include file="/layout/footer_2.jsp"%>--%>
 </body>

@@ -26,7 +26,7 @@
 <%--    <a href="/admin/weapon/create"> Créer </a>--%>
 <%--  </c:if>--%>
   <c:if test="${currentUser != null}">
-    <form action="${pageContext.request.contextPath}/Logout" method="post">
+    <form action="${pageContext.request.contextPath}/logout" method="post">
       <button type="submit"> Logout</button>
     </form>
   </c:if>
@@ -70,7 +70,7 @@
         </td>
         <td>
           <button>
-            <a href="/weaponhistory?id=${weapon.serialNumber}">Passif de l'arme</a>
+            <a href="/weapon/history?id=${weapon.serialNumber}">Passif de l'arme</a>
           </button>
           <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">
             <button>

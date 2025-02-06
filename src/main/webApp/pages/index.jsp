@@ -23,7 +23,7 @@
         <!--/src/main/webApp/pages/otherIndex.jsp-->
     </c:if>
     <c:if test="${currentUser != null}">
-        <form action="${pageContext.request.contextPath}/Logout" method="post">
+        <form action="${pageContext.request.contextPath}/logout" method="post">
             <button type="submit">Logout</button>
         </form>
     </c:if>

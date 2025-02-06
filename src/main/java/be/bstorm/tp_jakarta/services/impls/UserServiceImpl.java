@@ -46,6 +46,7 @@ public class UserServiceImpl implements UserService, Serializable {
         if(userRepository.existsByPseudonym(user.getPseudonym())){
             throw new RuntimeException("User already exists");
         }
+
         return userRepository.save(user);
     }
 

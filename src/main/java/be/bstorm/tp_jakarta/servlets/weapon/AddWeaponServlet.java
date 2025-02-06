@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/admin/weapon/create")
+@WebServlet("/weaponadd")
 public class AddWeaponServlet extends HttpServlet {
     @Inject
     private WeaponService weaponService;
