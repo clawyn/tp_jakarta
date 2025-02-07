@@ -46,7 +46,8 @@ public class UserServiceImpl implements UserService, Serializable {
         if(userRepository.existsByPseudonym(user.getPseudonym())){
             throw new RuntimeException("User already exists");
         }
-
+//        String password = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+//        user.setPassword(password);
         return userRepository.save(user);
     }
 

@@ -17,6 +17,7 @@
 <body>
 <%--<%@include file="/layout/header_2.jsp"%>--%>
 <main>
+    <a href="/pages/index.jsp"> Accueil</a>
    <h2> Formulaire nouveau user </h2>
     <form action="${pageContext.request.contextPath}/addUser" method="post">
         <div>
@@ -24,8 +25,8 @@
             <input type="text" id="id" name="id" required><br>
         </div>
         <div>
-            <label for="FirstName">Prénom :</label>
-            <input type="text" id="FirstName" name="FirstName" required><br>
+            <label for="firstName">Prénom :</label>
+            <input type="text" id="firstName" name="firstName" required><br>
         </div>
         <div>
             <label for="lastName">Nom de famille :</label>
@@ -41,9 +42,9 @@
         </div>
         <div>
             <label for="accepted">accepted :</label>
-            <input type="text" id="accepted" name="accepted" required><br>
-<%--            <button type="button" id="chooseAccepted"> A </button>--%>
-<%--            <button type="button" id="chooseRejected"> R </button>--%>
+            <input type="text" id="accepted" name="accepted" ><br>
+            <button type="button" id="chooseAccepted"> A </button>
+            <button type="button" id="chooseRejected"> R </button>
         </div>
         <div>
             <label for="role">role :</label>

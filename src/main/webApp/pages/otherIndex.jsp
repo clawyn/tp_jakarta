@@ -21,6 +21,7 @@
     <a href="/pages/addUser.jsp"> Add user </a>
     <a href="/pages/log.jsp" >log</a>
     <a href="/pages/addWeapon.jsp"> Add Weapon</a>
+    <a href="/pages/index.jsp"> Accueil</a>
   </c:if>
 <%--  <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">--%>
 <%--    <a href="/admin/weapon/create"> Créer </a>--%>

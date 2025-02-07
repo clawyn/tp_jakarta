@@ -26,12 +26,11 @@ public class UserRepositoryImpl implements UserRepository, Serializable {
             em.getTransaction().begin();
             em.persist(user);
             em.getTransaction().commit();
-//            return user;
+            return user;
         }catch (Exception e){
             System.out.println( e.getMessage());
-
+            return null;
         }
-        return null;
     }
 
     @Override

@@ -17,6 +17,7 @@
 <body>
 <%--<%@include file="/layout/header_2.jsp"%>--%>
 <main>
+  <a href="/pages/index.jsp"> Accueil</a>
   <h2>Formulaire nouvelle arme </h2>
   <form action="${pageContext.request.contextPath}/weaponAdd" method="post">
 

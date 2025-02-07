@@ -24,11 +24,11 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
             em.getTransaction().begin();
             em.persist(weapon);
             em.getTransaction().commit();
-//            return weapon;
+            return weapon;
         }catch (Exception e){
             System.out.println(e.getMessage());
+            return null;
         }
-        return null;
     }
 
     @Override
