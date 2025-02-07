@@ -55,16 +55,16 @@ public class DataInitializer implements ServletContextListener {
         users.forEach(userService::save);
 
         List<Weapon> weapons = List.of(
-            new Weapon(1L, "Épée de Aragorn", "Épée", "Épée elefique", "A récupéré le trône du Gondor avec."),
-            new Weapon(2L, "Sabre laser de Luke Skywalker", "Sabre", "Sabre laser", "A combattu l'Empire et rétabli l'équilibre dans la Force."),
-            new Weapon(3L, "Marteau de Thor", "Marteau", "Mjolnir", "A aidé à sauver l'univers des forces du mal."),
-            new Weapon(4L, "Bouclier de Captain America", "Bouclier", null, "A protégé le monde contre les menaces extraterrestres et les super-vilains."),
-            new Weapon(5L, "Baguette de Harry Potter", "Baguette magique", "Bois de houx et plume de phénix", "A vaincu Voldemort et sauvé le monde des sorciers."),
-            new Weapon(6L, "Trident de Aquaman", "Trident", null, " A régné sur Atlantis et protégé les océans."),
-            new Weapon(7L, "Katana de Michonne", "Katana", null, "A survécu à l'apocalypse zombie avec style."),
-            new Weapon(8L, "Arc de Legolas", "Arc", null, "A combattu aux côtés de la Communauté de l'Anneau."),
-            new Weapon(9L, "Pistolet de Han Solo", "Blaster", "DL-44", "A aidé à détruire l'Étoile de la Mort et à sauver la galaxie."),
-            new Weapon(10L, "Lasso de Wonder Woman", "Lasso", null, "A révélé la vérité et combattu pour la justice.")
+            new Weapon( "Épée de Aragorn", "Épée", "Épée elefique", "A récupéré le trône du Gondor avec."),
+            new Weapon( "Sabre laser de Luke Skywalker", "Sabre", "Sabre laser", "A combattu l'Empire et rétabli l'équilibre dans la Force."),
+            new Weapon( "Marteau de Thor", "Marteau", "Mjolnir", "A aidé à sauver l'univers des forces du mal."),
+            new Weapon( "Bouclier de Captain America", "Bouclier", null, "A protégé le monde contre les menaces extraterrestres et les super-vilains."),
+            new Weapon( "Baguette de Harry Potter", "Baguette magique", "Bois de houx et plume de phénix", "A vaincu Voldemort et sauvé le monde des sorciers."),
+            new Weapon( "Trident de Aquaman", "Trident", null, " A régné sur Atlantis et protégé les océans."),
+            new Weapon( "Katana de Michonne", "Katana", null, "A survécu à l'apocalypse zombie avec style."),
+            new Weapon( "Arc de Legolas", "Arc", null, "A combattu aux côtés de la Communauté de l'Anneau."),
+            new Weapon( "Pistolet de Han Solo", "Blaster", "DL-44", "A aidé à détruire l'Étoile de la Mort et à sauver la galaxie."),
+            new Weapon( "Lasso de Wonder Woman", "Lasso", null, "A révélé la vérité et combattu pour la justice.")
         );
         weapons.forEach(weaponService :: save);
     }

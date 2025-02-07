@@ -75,7 +75,6 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             Weapon otherWeapon = em.find(Weapon.class, name);
-            otherWeapon.setSerialNumber(weapon.getSerialNumber());
             otherWeapon.setName(weapon.getName());
             otherWeapon.setType(weapon.getType());
             otherWeapon.setModel(weapon.getModel());
@@ -92,7 +91,6 @@ public class WeaponRepositoryImpl implements WeaponRepository, Serializable {
             em.getTransaction().begin();
 
             Weapon otherWeapon = em.find(Weapon.class,serialNumber);
-            otherWeapon.setSerialNumber(weapon.getSerialNumber());
             otherWeapon.setName(weapon.getName());
             otherWeapon.setType(weapon.getType());
             otherWeapon.setModel(weapon.getModel());

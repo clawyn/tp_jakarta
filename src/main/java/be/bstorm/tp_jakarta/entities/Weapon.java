@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor @AllArgsConstructor
 @EqualsAndHashCode @ToString
 public class Weapon {
-    @Id
-    @Getter @Setter
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     @Column(name ="serialNumber", nullable = false, unique = true)
     private Long serialNumber;
 
@@ -29,4 +29,10 @@ public class Weapon {
     @Getter @Setter
     private String history;
 
+    public Weapon(String name, String type, String model, String history) {
+        this.name = name;
+        this.type = type;
+        this.model = model;
+        this.history = history;
+    }
 }

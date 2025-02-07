@@ -25,14 +25,13 @@ public class AddWeaponServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Long serialNumber = Long.valueOf(req.getParameter("serialNumber"));
         String name = req.getParameter("name");
         String type = req.getParameter("type");
         String model = req.getParameter("model");
         String history = req.getParameter("history");
 
         try{
-            weaponService.addWeapon(new Weapon(serialNumber, name, type, model, history));
+            weaponService.addWeapon(new Weapon( name, type, model, history));
             resp.sendRedirect(req.getContextPath() + "/addWeapon");
         }catch (Exception e){
             System.out.println(e.getMessage());

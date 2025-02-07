@@ -21,10 +21,10 @@
   <h2>Formulaire nouvelle arme </h2>
   <form action="${pageContext.request.contextPath}/weaponAdd" method="post">
 
-    <div>
-      <label for="serialNumber">serialNumber :</label>
-      <input type="number" id="serialNumber" name="serialNumber" required><br>
-    </div>
+<%--    <div>--%>
+<%--      <label for="serialNumber">serialNumber :</label>--%>
+<%--      <input type="number" id="serialNumber" name="serialNumber" required><br>--%>
+<%--    </div>--%>
     <div>
       <label for="name">nom :</label>
       <input type="text" id="name" name="name" required><br>
