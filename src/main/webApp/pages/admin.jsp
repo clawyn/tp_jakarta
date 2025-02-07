@@ -35,6 +35,15 @@
                             <td>${user.id}</td>
                             <td>${user.pseudonym}</td>
                             <td>${user.role}</td>
+                            <td>
+                                <button>
+                                    <a href="/admin/user/update?id=${user.id}">Modifier</a>
+                                </button>
+<%--                                <form action="${pageContext.request.contextPath}/admin/user/deleted" method="post">--%>
+<%--                                    <input type="text" hidden="hidden" name="id" value="${user.id}">--%>
+<%--                                    <button type="submit"> Supprimer </button>--%>
+<%--                                </form>--%>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>

@@ -30,25 +30,25 @@ public class DataInitializer implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         String password = BCrypt.hashpw("all",BCrypt.gensalt());
-        User admin = new User("admin", password, true, "admin");
-        User accepted = new User("accepted", password, true, "accepted");
-        User rejected = new User("rejected", password, false, "rejected");
+        User admin = new User("admin", password, "admin");
+        User accepted = new User("accepted", password, "accepted");
+        User rejected = new User("rejected", password, "rejected");
         userService.addUser(accepted);
         userService.addUser(admin);
         userService.addUser(rejected);
 
         List<User> users = List.of(
-                new User( "John", "Doe", "Le Fantôme.", password, true, "accepted"),
-                new User( "Jane", "Smith", "La Voleuse.", password, true, "accepted"),
-                new User("Max", "Payne", "Le Punisseur.", password, true, "accepted"),
-                new User("Alice", "Johnson", "La Sorcière.", password, true, "accepted"),
-                new User( "Bob", "Brown", "Le Hacker.", password, true, "accepted"),
-                new User("Clara", "White", "La Reine des Glaces.", password, true, "accepted"),
-                new User( "Jack", "Black", "Le Maître des Ombres", password, true, "accepted"),
-                new User( "Luke", "Skywalker", "Le Jedi Noir .", password, true, "accepted"),
-                new User( "Diana", "Prince", "La Guerrière .", password, true, "accepted"),
-                new User( "Emma", "Green", "La Cambrioleuse.", password, true, "accepted"),
-                new User ("claire","mageren","cm",password,true,"admin")
+                new User( "John", "Doe", "Le Fantôme.", password, "accepted"),
+                new User( "Jane", "Smith", "La Voleuse.", password,  "accepted"),
+                new User("Max", "Payne", "Le Punisseur.", password,  "accepted"),
+                new User("Alice", "Johnson", "La Sorcière.", password,  "accepted"),
+                new User( "Bob", "Brown", "Le Hacker.", password, "accepted"),
+                new User("Clara", "White", "La Reine des Glaces.", password,  "accepted"),
+                new User( "Jack", "Black", "Le Maître des Ombres", password, "accepted"),
+                new User( "Luke", "Skywalker", "Le Jedi Noir .", password,  "accepted"),
+                new User( "Diana", "Prince", "La Guerrière .", password,  "accepted"),
+                new User( "Emma", "Green", "La Cambrioleuse.", password,  "accepted"),
+                new User ("claire","mageren","cm",password,"admin")
 
         );
 

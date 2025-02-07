@@ -57,4 +57,18 @@ public class UserServiceImpl implements UserService, Serializable {
         return userRepository.findAll();
     }
 
+
+    @Override
+    public User findById(Long id) {
+        return userRepository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public void update(User user, Long id) {
+        User users = userRepository.findById(user.getId()).orElseThrow();
+        users.setPseudonym(user.getPseudonym());
+        users.setRole(user.getRole());
+        userRepository.update(users, id);
+    }
+
 }

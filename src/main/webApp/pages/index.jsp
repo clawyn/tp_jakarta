@@ -46,7 +46,7 @@
         <div>
     </c:if>
 
-    <c:if test="${currentUser != null && currentUser.accepted == true}">
+    <c:if test="${currentUser != null && currentUser.role.equals('accepted') && currentUser.role.equals('admin')}">
         <a href="/pages/addUser.jsp"> Add User</a>
 
 
@@ -98,10 +98,10 @@
 
 
 </main>
-<c:if test="${currentUser == null || currentUser.accepted == false}">
+<c:if test="${currentUser == null || currentUser.role.equals('rejected')}">
     <%@include file="/layout/footer.jsp"%>
 </c:if>
-<c:if test="${currentUser != null && currentUser.accepted == true}">
+<c:if test="${currentUser != null && currentUser.role.equals('accepted')}">
     <%@include file="/layout/footer_2.jsp"%>
 </c:if>
 

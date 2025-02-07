@@ -13,7 +13,7 @@ public class UserDTO {
     private String lastName;
     private String pseudonym;
     private String role;
-    private boolean accepted;
+
 
 
 
@@ -24,7 +24,6 @@ public class UserDTO {
                 user.getFirstName(),
                 user.getLastName(),
                 user.getPseudonym(),
-                user.getRole(),
-                user.isAccepted());
+                user.getRole());
     }
 }

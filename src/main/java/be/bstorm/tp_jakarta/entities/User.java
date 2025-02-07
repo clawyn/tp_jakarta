@@ -30,54 +30,38 @@ public class User {
     @Getter @Setter
     private String password;
 
-    @Column (name="accepted",nullable = false)
-    @Getter @Setter
-    private boolean accepted;
+//    @Column (name="accepted",nullable = false)
+//    @Getter @Setter
+//    private boolean accepted;
 
     @Column(name="role",nullable = false)
     @Getter @Setter
     private String role;
 
 
-    public User (String pseudonym, String password, boolean accepted) {
-        this.pseudonym = pseudonym;
-        this.password = password;
-        this.accepted = accepted;
-    }
+
     public User (String pseudonym, String password) {
         this.pseudonym = pseudonym;
         this.password = password;
     }
-    public User (String pseudonym, String password, boolean accepted, String role) {
+    public User (String pseudonym, String password,String role) {
         this.pseudonym = pseudonym;
         this.password = password;
-        this.accepted = accepted;
+
         this.role = role;
     }
-    public User (String pseudonym, String password, String role, boolean accepted) {
-        this.pseudonym = pseudonym;
-        this.password = password;
-        this.role = role;
-        this.accepted = accepted;
-    }
 
-
-//    public User(String pseudonym, String password, String firstName, String lastName, boolean accepted, String role) {
-//        this.pseudonym = pseudonym;
-//        this.password = password;
-//        this.FirstName = firstName;
-//        this.LastName = lastName;
-//        this.accepted = accepted;
-//        this.role = role;
-//    }
-
-
-    public User(String firstName, String lastName, String pseudonym, String password, boolean accepted, String role) {
+    public User(String firstName, String lastName, String pseudonym, String password, String role) {
         this.FirstName = firstName;
         this.LastName = lastName;
         this.pseudonym = pseudonym;
         this.password = password;
-        this.accepted = accepted;
+        this.role = role;
+    }
+
+    public User (Long id,String pseudonym,String role) {
+        this.id = id;
+        this.pseudonym = pseudonym;
         this.role = role;
     }
 }

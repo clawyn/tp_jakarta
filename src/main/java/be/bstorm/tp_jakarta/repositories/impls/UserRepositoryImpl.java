@@ -58,4 +58,26 @@ public class UserRepositoryImpl implements UserRepository, Serializable {
             return em.createQuery("SELECT u From User u", User.class).getResultList();
         }
     }
+
+    @Override
+    public Optional<User> findById(Long id) {
+        try(EntityManager em = emf.createEntityManager()){
+            Query query = em.createQuery("select u from User u where u.id = :id");
+            query.setParameter("id", id);
+            return Optional.of((User) query.getSingleResult());
+        }
+    }
+
+    @Override
+    public void update(User users, Long id) {
+        try(EntityManager em = emf.createEntityManager()){
+            em.getTransaction().begin();
+
+            User otherUser = em.find(User.class, id);
+            otherUser.setPseudonym(users.getPseudonym());
+            otherUser.setRole(users.getRole());
+
+            em.getTransaction().commit();
+        }
+    }
 }
