@@ -29,10 +29,10 @@ public class AddUserServlet extends HttpServlet {
         String lastName = req.getParameter("lastName");
         boolean accepted = Boolean.parseBoolean(req.getParameter(String.valueOf(true)));
         String role = req.getParameter("role");
-        Long id = Long.parseLong(req.getParameter("id"));
+
 
         try {
-            userService.addUser(new User(id,firstName,lastName,pseudonym,password,accepted,role));
+            userService.addUser(new User(firstName,lastName,pseudonym,password,accepted,role));
             resp.sendRedirect(req.getContextPath() + "/log");
         }
         catch (Exception e) {

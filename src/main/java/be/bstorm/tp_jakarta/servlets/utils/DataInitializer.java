@@ -38,17 +38,17 @@ public class DataInitializer implements ServletContextListener {
         userService.addUser(rejected);
 
         List<User> users = List.of(
-                new User(1L, "John", "Doe", "Le Fantôme.", password, true, "accepted"),
-                new User(2L, "Jane", "Smith", "La Voleuse.", password, true, "accepted"),
-                new User(3L, "Max", "Payne", "Le Punisseur.", password, true, "accepted"),
-                new User(4L, "Alice", "Johnson", "La Sorcière.", password, true, "accepted"),
-                new User(5L, "Bob", "Brown", "Le Hacker.", password, true, "accepted"),
-                new User(6L, "Clara", "White", "La Reine des Glaces.", password, true, "accepted"),
-                new User(7L, "Jack", "Black", "Le Maître des Ombres", password, true, "accepted"),
-                new User(8L, "Luke", "Skywalker", "Le Jedi Noir .", password, true, "accepted"),
-                new User(9L, "Diana", "Prince", "La Guerrière .", password, true, "accepted"),
-                new User(10L, "Emma", "Green", "La Cambrioleuse.", password, true, "accepted"),
-                new User (11L,"cl","mag","cm",password,true,"admin")
+                new User( "John", "Doe", "Le Fantôme.", password, true, "accepted"),
+                new User( "Jane", "Smith", "La Voleuse.", password, true, "accepted"),
+                new User("Max", "Payne", "Le Punisseur.", password, true, "accepted"),
+                new User("Alice", "Johnson", "La Sorcière.", password, true, "accepted"),
+                new User( "Bob", "Brown", "Le Hacker.", password, true, "accepted"),
+                new User("Clara", "White", "La Reine des Glaces.", password, true, "accepted"),
+                new User( "Jack", "Black", "Le Maître des Ombres", password, true, "accepted"),
+                new User( "Luke", "Skywalker", "Le Jedi Noir .", password, true, "accepted"),
+                new User( "Diana", "Prince", "La Guerrière .", password, true, "accepted"),
+                new User( "Emma", "Green", "La Cambrioleuse.", password, true, "accepted"),
+                new User ("cl","mag","cm",password,true,"admin")
 
         );
 

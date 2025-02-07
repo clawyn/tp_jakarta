@@ -20,10 +20,10 @@
     <a href="/pages/index.jsp"> Accueil</a>
    <h2> Formulaire nouveau user </h2>
     <form action="${pageContext.request.contextPath}/addUser" method="post">
-        <div>
-            <label for="id">id :</label>
-            <input type="text" id="id" name="id" required><br>
-        </div>
+<%--        <div>--%>
+<%--            <label for="id">id :</label>--%>
+<%--            <input type="text" id="id" name="id" required><br>--%>
+<%--        </div>--%>
         <div>
             <label for="firstName">Prénom :</label>
             <input type="text" id="firstName" name="firstName" required><br>
