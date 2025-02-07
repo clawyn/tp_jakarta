@@ -48,7 +48,7 @@ public class DataInitializer implements ServletContextListener {
                 new User( "Luke", "Skywalker", "Le Jedi Noir .", password, true, "accepted"),
                 new User( "Diana", "Prince", "La Guerrière .", password, true, "accepted"),
                 new User( "Emma", "Green", "La Cambrioleuse.", password, true, "accepted"),
-                new User ("cl","mag","cm",password,true,"admin")
+                new User ("claire","mageren","cm",password,true,"admin")
 
         );
 

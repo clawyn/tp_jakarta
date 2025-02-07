@@ -17,11 +17,11 @@
         <!--/src/main/webApp/pages/log.jsp-->
 
     </c:if>
-    <c:if test="${currentUser == null}">
-<%--        currentUser != null && (currentUser.accepted.equals(true) || currentUser.getRole().equals('ADMIN'))--%>
-        <a href="/pages/otherIndex.jsp"> Over </a>
-        <!--/src/main/webApp/pages/otherIndex.jsp-->
+    <c:if test="${currentUser != null && currentUser.role.equals('admin')}">
+        <a href="/rejected">admin</a>
     </c:if>
+
+
     <c:if test="${currentUser != null}">
         <a href="/pages/index.jsp"> Accueil</a>
 
@@ -30,20 +30,26 @@
         </form>
     </c:if>
     <c:if test="${currentUser == null}">
-        <table>
-            <thead>
-            <tr>
-                <th> Aimer son poney </th>
-                <img src="img/poney.png" alt="poney" style="width: 400px; height: 300px;">
-                <th> Caresser son poney </th>
-                <img src="img/caresser.png" alt="poney qui se fait caresser" style="width: 400px; height: 300px;">
-                <th> pommener son poney </th>
-                <img src="img/prommenade.png" alt="poney qui se promene" style="width: 400px; height: 300px;">
-            </tr>
-            </thead>
-        </table>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th> Aimer son poney </th>
+                    <img src="img/poney.png" alt="poney" style="width: 400px; height: 300px;">
+                    <th> Caresser son poney </th>
+                    <img src="img/caresser.png" alt="poney qui se fait caresser" style="width: 400px; height: 300px;">
+                    <th> pommener son poney </th>
+                    <img src="img/prommenade.png" alt="poney qui se promene" style="width: 400px; height: 300px;">
+                </tr>
+                </thead>
+            </table>
+        <div>
     </c:if>
+
     <c:if test="${currentUser != null && currentUser.accepted == true}">
+        <a href="/pages/addUser.jsp"> Add User</a>
+
+
         <img src="img/frison_ténébreux.png" alt="poney" style="width: 400px; height: 300px;">
         <a href="/pages/addWeapon.jsp"> Add weapon</a>
 
@@ -89,6 +95,8 @@
             </tbody>
         </table>
     </c:if>
+
+
 </main>
 <c:if test="${currentUser == null || currentUser.accepted == false}">
     <%@include file="/layout/footer.jsp"%>

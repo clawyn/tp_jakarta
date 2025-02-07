@@ -40,16 +40,23 @@
             <label for="password">Mot de passe :</label>
             <input type="text" id="password" name="password" required><br>
         </div>
-        <div>
-            <label for="accepted">accepted :</label>
-            <input type="text" id="accepted" name="accepted" ><br>
-            <button type="button" id="chooseAccepted"> A </button>
-            <button type="button" id="chooseRejected"> R </button>
-        </div>
-        <div>
-            <label for="role">role :</label>
-            <input type="text" id="role" name="role" required><br>
-        </div>
+    <c:if test="${currentUser != null && currentUser.role.equals('admin')}">
+        <a href="/pages/admin.jsp/">admin</a>
+    </c:if>
+        <c:if test="${currentUser != admin}">
+            <div>
+                <form action="${pageContext.request.contextPath}/rejected" method="post">
+                    <label for="accepted">accepted :</label>
+                    <input type="text" id="accepted" name="accepted" ><br>
+                    <button type="button" id="chooseAccepted"> Accepted </button>
+                    <button type="button" id="chooseRejected"> Rejected </button>
+                </form>
+            </div>
+            <div>
+                <label for="role">role :</label>
+                <input type="text" id="role" name="role" required><br>
+            </div>
+        </c:if>
         <button type="submit"> Add</button>
     </form>
 </main>

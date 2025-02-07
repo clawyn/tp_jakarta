@@ -8,6 +8,7 @@ import jakarta.inject.Inject;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.Serializable;
+import java.util.List;
 
 @SessionScoped
 public class UserServiceImpl implements UserService, Serializable {
@@ -49,6 +50,11 @@ public class UserServiceImpl implements UserService, Serializable {
 //        String password = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
 //        user.setPassword(password);
         return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
 }

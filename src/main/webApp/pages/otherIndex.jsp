@@ -69,22 +69,24 @@
           <c:if test="${weapon.history == null}">
             Pas d'histoire connue.
           </c:if>
-        </td>
-        <td>
-          <button>
-            <a href="/weapon/history?id=${weapon.serialNumber}">Passif de l'arme</a>
-          </button>
-          <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">
-            <button>
-              <a href="/admn/weapon/update?id=${weapon.serialNumber}">Update</a>
-            </button>
+<%--        </td>--%>
+<%--        <td>--%>
+<%--          <button>--%>
+<%--            <a href="/weapon/history?id=${weapon.serialNumber}">Passif de l'arme</a>--%>
+<%--          </button>--%>
+<%--          <c:if test="${currentUser != null && currentUser.accepted.equals(true) && currentUser.role.equals('admin')}">--%>
+<%--            <button>--%>
+<%--              <a href="/admn/weapon/update?id=${weapon.serialNumber}">Update</a>--%>
+<%--            </button>--%>
 
-          </c:if>
+<%--          </c:if>--%>
         </td>
       </tr>
     </c:forEach>
     </tbody>
   </table>
+
+
 </main>
 <%--<%@include file="/layout/footer_2.jsp"%>--%>
 <!--src/main/webApp/layout/footer_2.jsp-->

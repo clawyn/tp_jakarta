@@ -16,6 +16,7 @@
 </head>
 <body>
 <%@include file="/layout/header_2.jsp"%>
+<a href="/pages/index.jsp"> Accueil</a>
 <main>
     <h2> Modifier une arme </h2>
     <div>

@@ -9,13 +9,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor
 public class UserDTO {
     private Long id;
+    private String firstName;
+    private String lastName;
     private String pseudonym;
     private String role;
-    private boolean  accepted;
+    private boolean accepted;
+
 
 
     public static UserDTO fromUser(User user) {
 
-        return new UserDTO(user.getId(), user.getPseudonym(), user.getRole(), user.isAccepted());
+        return new UserDTO(
+                user.getId(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getPseudonym(),
+                user.getRole(),
+                user.isAccepted());
     }
 }

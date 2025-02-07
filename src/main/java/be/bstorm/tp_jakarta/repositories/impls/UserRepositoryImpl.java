@@ -9,6 +9,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Query;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Optional;
 
 @SessionScoped
@@ -48,6 +49,13 @@ public class UserRepositoryImpl implements UserRepository, Serializable {
             Query query = em.createQuery("SELECT u From User u WHERE u.pseudonym = :pseudonym");
             query.setParameter("pseudonym", pseudonym);
             return Optional.of((User) query.getSingleResult());
+        }
+    }
+
+    @Override
+    public List<User> findAll() {
+        try(EntityManager em = emf.createEntityManager()){
+            return em.createQuery("SELECT u From User u", User.class).getResultList();
         }
     }
 }
