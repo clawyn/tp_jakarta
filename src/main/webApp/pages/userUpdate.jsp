@@ -13,10 +13,10 @@
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/user/update?id=${user.id}" method="post">
-    <div>
-        <label for="id">ID : </label>
-        <input id="id" type="number" name="id" value="${user.id}">
-    </div>
+<%--    <div>--%>
+<%--        <label for="id">ID : </label>--%>
+<%--        <input id="id" type="number" name="id" value="${user.id}">--%>
+<%--    </div>--%>
     <div>
         <label for="pseudonym">pseudonym : </label>
         <input id="pseudonym" type="text" name="pseudonym" value="${user.pseudonym}">

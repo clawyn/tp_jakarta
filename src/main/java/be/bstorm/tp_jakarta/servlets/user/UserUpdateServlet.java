@@ -32,11 +32,14 @@ public class UserUpdateServlet extends HttpServlet {
     @Override
     protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
+//        String firstName = req.getParameter("FirstName");
+//        String lastName = req.getParameter("lastName");
         String pseudonym = req.getParameter("pseudonym");
+//        String password = req.getParameter("password");
         String role = req.getParameter("role");
         Long newId = Long.valueOf(req.getParameter("newId"));
 
-        User user = new User(id, pseudonym, role);
+        User user = new User( pseudonym, role);
         userService.update(user, newId );
 
         resp.sendRedirect(req.getContextPath() + "/pages/userUpdate" );

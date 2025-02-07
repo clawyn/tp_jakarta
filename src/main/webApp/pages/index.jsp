@@ -46,7 +46,7 @@
         <div>
     </c:if>
 
-    <c:if test="${currentUser != null && currentUser.role.equals('accepted') && currentUser.role.equals('admin')}">
+    <c:if test="${currentUser != null && currentUser.role.equals('accepted') || currentUser.role.equals('admin')}">
         <a href="/pages/addUser.jsp"> Add User</a>
 
 

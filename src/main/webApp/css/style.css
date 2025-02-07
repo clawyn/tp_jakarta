@@ -1,13 +1,94 @@
 body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    background-color: bisque;
 }
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Style for navigation links */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 100px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Style for buttons */
+button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f5f;
+}
+
+/* Style for images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Style for tables */
 table {
-    margin: 1rem auto;
-    font-size: 1.5rem;
+    width: 100%;
     border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Style for table headers */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    table, th, td {
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        box-sizing: border-box;
+    }
 }
 
